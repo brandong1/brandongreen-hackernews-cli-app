@@ -9,6 +9,7 @@ class HackerNews::Scraper
         doc.css('.title').each do |article_doc|
             title = article_doc.css('.title').text.strip #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
             url = article_doc.css('a').attribute('href').value
+            binding.pry
             #Create new instance of Article
             HackerNews::Article.new(title, url)
         end

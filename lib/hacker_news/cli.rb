@@ -8,7 +8,7 @@ class HackerNews::CLI
         puts ""
         puts "This CLI scrapes the Hacker News Website"
         
-        HackerNews.Scraper.scrape_news
+        HackerNews::Scraper.scrape_news
 
         # call main_menu method
         main_menu
