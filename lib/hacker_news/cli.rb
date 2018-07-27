@@ -31,7 +31,25 @@ class HackerNews::CLI
         puts "Please select an article to read more: "
 
         input = gets.strip
+        # Input to index minus 1 so user input corresponds to proper array index
+        index = input.to_i -1 
 
+        article = HackerNews::Article.all[index]
 
+        # Put this in a new method
+        # This will prevent needing to scrape again if more than one selection is made.
+
+        if !article.description || !article.title
+            HackerNews::Scraper.scrape_article_description
+        end
+
+        puts article.title
+        puts article.description
+
+        puts "============================="
+        main_menu
+
+        #add an exit option
+        #add behavior for invalid input
 
 end
