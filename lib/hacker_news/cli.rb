@@ -51,5 +51,5 @@ class HackerNews::CLI
 
         #add an exit option
         #add behavior for invalid input
-
+    end
 end

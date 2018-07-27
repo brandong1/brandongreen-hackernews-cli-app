@@ -12,6 +12,7 @@ class HackerNews::Scraper
             #Create new instance of Article
             HackerNews::Article.new(title, url)
         end
+    end
 
     def self.scrape_article_description(article)
         url = article.url
