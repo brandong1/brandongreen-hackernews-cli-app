@@ -7,12 +7,12 @@ class HackerNews::CLI
         puts "Welcome to the Hacker News CLI"
         puts ""
         puts "This CLI scrapes the Hacker News Website"
-        
+        puts ""
         HackerNews::Scraper.scrape_news
+        #binding.pry
 
         # call main_menu method
-        main_menu
-        
+        self.main_menu
     end  
 
     def main_menu
@@ -20,17 +20,32 @@ class HackerNews::CLI
         puts ""
 
         #Show the list of scraped articles
-        articles = HackerNews::Article.all
+        HackerNews::Article.all
 
         # Iterate over scraped articles array
+        # DEBUG: cli.rb:26:in `main_menu': undefined local variable or method `articles'
         articles.each_with_index do |article, index| # Could also do each.with_index(1?)[1?]
-            puts "#{index + 1}." #{article.title}"
+            puts "#{index + 1}. #{article.title}"
         end
 
-        puts ""
+        #articles = HackerNews::Article.all
+ 
         puts "Please select an article to read more: "
+        
+        #articles = HackerNews::Article.all
 
-        input = gets.strip
+        input = nil
+        until input == "exit"
+            input = gets.strip
+            case input
+            when "1"
+                puts "hi"
+            when "exit"
+                exit
+            end
+            
+        end
+
         # Input to index minus 1 so user input corresponds to proper array index
         index = input.to_i -1 
 
