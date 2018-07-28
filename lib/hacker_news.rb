@@ -1,5 +1,9 @@
 #Environment File
 
+module HackerNews
+  # Your code goes here...
+end
+
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
@@ -9,6 +13,3 @@ require_relative "./hacker_news/article"
 require_relative "./hacker_news/scraper"
 
 
-module HackerNews
-  # Your code goes here...
-end
