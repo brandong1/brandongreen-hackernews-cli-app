@@ -16,7 +16,7 @@ class HackerNews::Article
     end
 
     def self.create
-        
+        # code
     end
 
     
