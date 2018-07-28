@@ -24,6 +24,8 @@ class HackerNews::CLI
 
         # Iterate over scraped articles array
         # DEBUG: cli.rb:26:in `main_menu': undefined local variable or method `articles'
+        #articles = Nokogiri::HTML(open(BASE_URL))
+        articles.css('.title a')
         articles.each_with_index do |article, index| # Could also do each.with_index(1?)[1?]
             puts "#{index + 1}. #{article.title}"
         end
