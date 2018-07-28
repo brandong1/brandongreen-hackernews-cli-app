@@ -14,5 +14,10 @@ class HackerNews::Article
     def self.all
         @@all
     end
+
+    def self.create
+        
+    end
+
     
 end
