@@ -12,7 +12,7 @@ class HackerNews::CLI
         #binding.pry
 
         # call main_menu method
-        self.main_menu
+        main_menu
     end  
 
     def main_menu
@@ -25,8 +25,9 @@ class HackerNews::CLI
         # Iterate over scraped articles array
         # DEBUG: cli.rb:26:in `main_menu': undefined local variable or method `articles'
         #articles = Nokogiri::HTML(open(BASE_URL))
-        articles.css('.title a')
-        articles.each_with_index do |article, index| # Could also do each.with_index(1?)[1?]
+        HackerNews::Articles.all.each.with_index do |article, index| # Could also do each.with_index(1?)[1?]
+            #articles.css('.title a')
+            
             puts "#{index + 1}. #{article.title}"
         end
 
