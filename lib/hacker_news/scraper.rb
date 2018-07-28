@@ -7,7 +7,7 @@ class HackerNews::Scraper
         #binding.pry
         #Iterate over each article
         doc.css('.title').each do |article_doc|
-            #binding.pry
+            binding.pry
             title = article_doc.css('.title').text.strip #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
             url = article_doc.css('a').attribute('href').value
             #binding.pry
