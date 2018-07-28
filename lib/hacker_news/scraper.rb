@@ -1,18 +1,18 @@
 class HackerNews::Scraper
 
-    BASE_URL = "https://news.ycombinator.com/" # does this need to be in quotes?
+    BASE_URL = "https://news.ycombinator.com" # does this need to be in quotes?
 
     def self.scrape_news
         doc = Nokogiri::HTML(open(BASE_URL))
         #binding.pry
         #Iterate over each article
         doc.css('.title').each do |article_doc|
-            binding.pry
-            title = article_doc.css('.title').text.strip #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
-            url = article_doc.css('a').attribute('href').value
+            title = article_doc.css('.title a.storylink').text #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
+            #url = article_doc.css('a').attribute('href').value
             #binding.pry
             #Create new instance of Article
-            HackerNews::Article.new(title, url)
+            #HackerNews::Article.new(title, url)
+            #binding.pry
         end
     end
 
