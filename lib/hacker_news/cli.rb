@@ -16,7 +16,7 @@ class HackerNews::CLI
     end  
 
     def main_menu
-        puts "Here's a list of current articles you can read: "
+        puts "Please type 'news' for a list of news articles or type 'jobs' to show available jobs."
         puts ""
 
         #Show the list of scraped articles
@@ -25,15 +25,15 @@ class HackerNews::CLI
         # Iterate over scraped articles array
         # DEBUG: cli.rb:26:in `main_menu': undefined local variable or method `articles'
         #articles = Nokogiri::HTML(open(BASE_URL))
-        HackerNews::Articles.all.each.with_index do |article, index| # Could also do each.with_index(1?)[1?]
+        #HackerNews::Articles.all.each.with_index do |article, index| # Could also do each.with_index(1?)[1?]
             #articles.css('.title a')
             
-            puts "#{index + 1}. #{article.title}"
-        end
+            #puts "#{index + 1}. #{article.title}"
+        #end
 
         #articles = HackerNews::Article.all
  
-        puts "Please select an article to read more: "
+        #puts "Please select an article to read more: "
         
         #articles = HackerNews::Article.all
 
@@ -41,8 +41,10 @@ class HackerNews::CLI
         until input == "exit"
             input = gets.strip
             case input
-            when "1"
+            when "news"
                 puts "hi"
+            when "jobs"
+                puts "jobs"
             when "exit"
                 exit
             end
@@ -50,9 +52,9 @@ class HackerNews::CLI
         end
 
         # Input to index minus 1 so user input corresponds to proper array index
-        index = input.to_i -1 
+        #index = input.to_i -1 
 
-        article = HackerNews::Article.all[index]
+        #article = HackerNews::Article.all[index]
 
         # Put this in a new method
         # This will prevent needing to scrape again if more than one selection is made.

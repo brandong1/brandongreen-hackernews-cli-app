@@ -10,11 +10,12 @@ class HackerNews::Scraper
         doc.css('.title a.storylink').each do |article_title|
             title = article_title.text 
             url = article_title.attribute('href').value
-            binding.pry
+            #binding.pry
             HackerNews::Article.new(title, url)
 
         end
-        title = articles.css('.title a.storylink').text #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
+    end
+        #title = articles.css('.title a.storylink').text #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
 
         # #Iterate over each article
 
@@ -25,7 +26,6 @@ class HackerNews::Scraper
             #HackerNews::Article.new(title, url)
             #binding.pry
         #end
-    end
 
     def self.scrape_article_description(article)
         url = article.url
