@@ -25,15 +25,19 @@ class HackerNews::CLI
             input = gets.strip
             case input
             when "news"
-                puts "list of news headlines"
+                puts "This shows a list of news headlines"
+                HackerNews::Scraper.scrape_news #do I need to pass the "type" i.e. news or jobs?
             when "jobs"
-                puts "list of available jobs"
+                puts "This shows a list of available jobs"
+                #HackerNews::Scraper.scrape_jobs
             when "exit"
                 exit
             end
             
         end
         
+        puts "============================="
+        main_menu
         # Input to index minus 1 so user input corresponds to proper array index
         #index = input.to_i -1 
         
@@ -42,15 +46,13 @@ class HackerNews::CLI
         # Put this in a new method
         # This will prevent needing to scrape again if more than one selection is made.
         
-        if !article.description || !article.title
-            HackerNews::Scraper.scrape_article_description
-        end
+        # if !article.description || !article.title
+        #     HackerNews::Scraper.scrape_article_description
+        # end
         
-        puts article.title
-        puts article.description
+        # puts article.title
+        # puts article.description
         
-        puts "============================="
-        main_menu
         
         #add an exit option
         #add behavior for invalid input

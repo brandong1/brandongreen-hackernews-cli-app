@@ -11,7 +11,7 @@ class HackerNews::Scraper
         doc.css('.title a.storylink').each do |article_title|
             title = article_title.text 
             url = article_title.attribute('href').value
-            HackerNews::Article.new(title, url)
+            HackerNews::Article.new(title, url, "new")
             #binding.pry
 
         end
@@ -22,7 +22,7 @@ class HackerNews::Scraper
         doc.css('.title a.storylink').each do |job|
             job = article_title.text 
             #url = article_title.attribute('href').value
-            HackerNews::Article.new(title, url)
+            HackerNews::Article.new(title, url, "jobs")
             binding.pry
             #HackerNews::Jobs.new(description)
         end

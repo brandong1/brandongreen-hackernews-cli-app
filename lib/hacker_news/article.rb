@@ -1,10 +1,11 @@
 class HackerNews::Article
 
-    attr_accessor :title, :description, :url
+    attr_accessor :title, :description, :url, :type
 
     @@all = []
 
-    def initialize(title, url)
+    def initialize(title, url, type)
+        @type = type
         @title = title
         @url = url
         @description= description
