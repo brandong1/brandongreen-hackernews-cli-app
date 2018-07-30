@@ -20,7 +20,7 @@ class HackerNews::CLI
         puts ""
 
         #Show the list of scraped articles
-        HackerNews::Article.all
+        
 
         # Iterate over scraped articles array
         # DEBUG: cli.rb:26:in `main_menu': undefined local variable or method `articles'

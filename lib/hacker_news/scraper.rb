@@ -6,9 +6,15 @@ class HackerNews::Scraper
     def self.scrape_news
         doc = Nokogiri::HTML(open(BASE_URL))
         #binding.pry
-        articles = doc.css('.title a.storylink').text.strip
-        binding.pry
-             title = article_doc.css('.title a.storylink').text #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
+        # articles = doc.css('.title a.storylink').text.strip
+        doc.css('.title a.storylink').each do |article_title|
+            title = article_title.text 
+            url = article_title.attribute('href').value
+            binding.pry
+            HackerNews::Article.new(title, url)
+
+        end
+        title = articles.css('.title a.storylink').text #DEBUG: Does it need to be title = article_doc.css('.title a').text.strip
 
         # #Iterate over each article
 
