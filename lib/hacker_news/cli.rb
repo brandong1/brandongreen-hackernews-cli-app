@@ -26,13 +26,15 @@ class HackerNews::CLI
             case input
             when "news"
                 puts "This shows a list of news headlines"
-                HackerNews::Scraper.scrape_news #do I need to pass the "type" i.e. news or jobs?
+                HackerNews::Article.list_news 
+                #do I need to pass the "type" i.e. news or jobs?
             when "jobs"
                 puts "This shows a list of available jobs"
-                #HackerNews::Scraper.scrape_jobs
+                HackerNews::Scraper.scrape_jobs
             when "exit"
                 exit
             end
+            main_menu
             
         end
         
