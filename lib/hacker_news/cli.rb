@@ -4,9 +4,10 @@ class HackerNews::CLI
 # Spinner-tty
 
     def start
-        puts "Welcome to the Hacker News CLI"
+        puts "========================================".colorize(:red)
+        puts ColorizedString["Welcome to the Hacker News CLI"].colorize(:blue)
         puts ""
-        puts "This CLI scrapes the Hacker News Website"
+        puts ColorizedString["This CLI scrapes the Hacker News Website for news headlines and job postings."].colorize(:blue)
         puts ""
         HackerNews::Scraper.scrape_news
         HackerNews::Scraper.scrape_jobs
@@ -17,30 +18,42 @@ class HackerNews::CLI
     end  
 
     def main_menu
-        puts "Please type 'news' for a list of news headlines or type 'jobs' to show available jobs."
-        puts "===================="
+        puts ColorizedString["Please type 'news' for a list of news headlines or type 'jobs' to show available jobs."].colorize(:blue)
+        puts "========================================".colorize(:red)
 
         
         input = nil
         until input == "exit"
             input = gets.strip
-            case input
+            case input.downcase #Input is NOT case sensitive
             when "news"
+                puts "========================================".colorize(:red)
                 puts "This shows a list of news headlines: "
                 HackerNews::Article.list_news 
                 #do I need to pass the "type" i.e. news or jobs?
             when "jobs"
+                puts "========================================".colorize(:red)
                 puts "Here is a list of available jobs: "
                 HackerNews::Jobs.list_jobs
             when "exit"
+                puts puts "========================================".colorize(:red)
+                puts "Have a great day!"
+                puts ""
+                puts ""
                 exit
+            #Need to figure out how to implement invalid input behavior:
+            # when input != "exit" || "news" || "jobs"
+            #         puts "Does not compute. Valid input required."
+            else
+                puts ""
+                puts ColorizedString["++DOES NOT COMPUTE. VALID INPUT REQUIRED++"].colorize(:red)
             end
-            puts "===================="
+            puts ""
+            puts "========================================".colorize(:red)
             main_menu
-            
         end
         
-        puts "============================="
+        puts "========================================".colorize(:red)
         #main_menu
         # Input to index minus 1 so user input corresponds to proper array index
         #index = input.to_i -1 

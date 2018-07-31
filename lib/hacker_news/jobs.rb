@@ -17,12 +17,12 @@ class HackerNews::Jobs
     def self.list_jobs
         job_list =[]
         self.all.each do |jobs|
-            job_list << jobs.job_headline\
+            job_list << jobs.job_headline
         end
         job_list.each do |jobs_headline|
             puts jobs_headline
             puts ""
-            binding.pry
+            #binding.pry
         end        
     end
 end
