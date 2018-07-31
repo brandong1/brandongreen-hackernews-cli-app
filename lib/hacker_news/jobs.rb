@@ -13,18 +13,16 @@ class HackerNews::Jobs
     def self.all
         @@all
     end
+
     def self.list_jobs
-        list =[]
+        job_list =[]
         self.all.each do |jobs|
-            list << jobs.job_headline
+            job_list << jobs.job_headline\
         end
-        list.each do |jobs_headline|
+        job_list.each do |jobs_headline|
             puts jobs_headline
             puts ""
             binding.pry
-        end
-        
+        end        
     end
-
-
 end

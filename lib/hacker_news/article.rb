@@ -25,15 +25,6 @@ class HackerNews::Article
         list.each do |news_headline|
             puts news_headline
             puts ""
-        end
-    
-        
-    end
-
-
-    # def self.create
-    #     # code
-    # end
-
-    
+        end       
+    end   
 end
