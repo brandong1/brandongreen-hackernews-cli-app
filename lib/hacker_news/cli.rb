@@ -17,7 +17,7 @@ class HackerNews::CLI
 
     def main_menu
         puts "Please type 'news' for a list of news headlines or type 'jobs' to show available jobs."
-        puts ""
+        puts "===================="
 
         
         input = nil
@@ -25,21 +25,22 @@ class HackerNews::CLI
             input = gets.strip
             case input
             when "news"
-                puts "This shows a list of news headlines"
+                puts "This shows a list of news headlines: "
                 HackerNews::Article.list_news 
                 #do I need to pass the "type" i.e. news or jobs?
             when "jobs"
-                puts "This shows a list of available jobs"
-                HackerNews::Scraper.scrape_jobs
+                puts "Here is a list of available jobs: "
+                HackerNews::Jobs.list_jobs
             when "exit"
                 exit
             end
+            puts "===================="
             main_menu
             
         end
         
         puts "============================="
-        main_menu
+        #main_menu
         # Input to index minus 1 so user input corresponds to proper array index
         #index = input.to_i -1 
         
