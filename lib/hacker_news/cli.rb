@@ -1,7 +1,8 @@
 class HackerNews::CLI
 
-# Feature Request:
-# Spinner-tty
+#FEATURE REQUESTS:
+#Spinner-tty to show scraping progress during initial scrape
+#Add urls to jobs listing
 
     def start
         puts "========================================".colorize(:red)

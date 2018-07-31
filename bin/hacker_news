@@ -1,7 +1,5 @@
 #!usr/local/bin ruby
 
-#One dot, two dot?
 require_relative '../lib/hacker_news'
-
 
 HackerNews::CLI.new.start
