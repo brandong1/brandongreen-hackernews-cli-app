@@ -1,8 +1,10 @@
 # HackerNews
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hacker_news`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the unofficial Hacker News CLI gem!
 
-TODO: Delete this and the text above, and describe your gem
+This CLI app scrapes the Hacker News website: https://news.ycombinator.com/
+
+Users have the option of viewing the latest news headlines or seeing the job postings listed on the Hacker News website.
 
 ## Installation
 
