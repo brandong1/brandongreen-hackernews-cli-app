@@ -26,9 +26,9 @@ Or install it yourself as:
 
 To use this gem follow the installation instructions above. The original code is a base for parsing the data from any website that lists news headlines or job postings. Feel free to edit according to your needs.
 
-To run the CLI, type in ./bin/hacker_news, which will give you instructions to type 'news' for the latest news headlines, 'jobs' for the latest job postings. Type a number for more information, including the name, address, phone number and website for each ice cream parlor.
+To run the CLI, type in ./bin/hacker_news, which will give you instructions to type 'news' for the latest news headlines, 'jobs' for the latest job postings. 
 
-When you are finished reviewing the list, type exit to exit the CLI.
+When you are finished reviewing the lists, type 'exit' to exit the CLI.
 
 ## Development
 
