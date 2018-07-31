@@ -18,7 +18,9 @@ class HackerNews::CLI
     end  
 
     def main_menu
-        puts ColorizedString["Please type 'news' for a list of news headlines or type 'jobs' to show available jobs."].colorize(:blue)
+        puts ColorizedString["Please type 'news' for a list of news headlines."].colorize(:blue) 
+        puts ColorizedString["Type 'jobs' to show available jobs."].colorize(:blue) 
+        puts ColorizedString["Type 'exit' to exit the program."].colorize(:blue) 
         puts "========================================".colorize(:red)
 
         
