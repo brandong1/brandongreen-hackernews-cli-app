@@ -19,12 +19,15 @@ class HackerNews::Article
     #Should this method be in Scraper?
     def self.list_news
         list =[]
-        self.all.each do |news|
+        self.all.each do |news, url|
             list << news.title
+            list << news.url
         end
-        list.each do |news_headline|
-            puts news_headline
+        list.each do |news_headline, url|
+            puts "#{news_headline}" #Need to figure out how to remove space between headline and url
+            puts "#{url}"
             puts ""
+            #binding.pry
         end       
     end   
 end
