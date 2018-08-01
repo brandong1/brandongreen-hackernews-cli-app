@@ -7,7 +7,7 @@ class HackerNews::Article
     def initialize(title, url)
         @type = type #Listing type as a possible add-on for the type of article I'm scraping
         @title = title
-        @url = url # Listing url as a possible add-on to display the articles url. This links to a different site.
+        @url = url # Listing url as a possible add-on to display the articles url. This links to a different site with different html than my source site.
         @description = description #Listing description as a possible add-on for displaying the first paragraph of the article. This will be tough because each article links to a different site.
         @@all << self
     end
@@ -23,9 +23,10 @@ class HackerNews::Article
             list << news.title
             list << news.url
         end
-        list.each do |news_headline, url|
+        list.each do |news_headline|
+            #binding.pry
             puts "#{news_headline}" #Need to figure out how to remove space between headline and url
-            puts "#{url}"
+            # puts "#{url}"
             puts ""
             #binding.pry
         end       

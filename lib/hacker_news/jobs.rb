@@ -4,10 +4,11 @@ class HackerNews::Jobs
 
     @@all = []
 
-    def initialize(job_headline)
+    def initialize(job_headline, url)
         @job_headline = job_headline
         @url = url #Listing url as a possible add on
         @@all << self
+        #binding.pry
     end
 
     def self.all
@@ -16,15 +17,15 @@ class HackerNews::Jobs
 
     def self.list_jobs
         job_list =[]
-        self.all.each do |jobs, url|
+        self.all.each do |jobs|
             job_list << jobs.job_headline
             job_list << jobs.url
         end
-        job_list.each do |jobs_headline, url|
-            puts "#{jobs_headline}"
-            #puts "#{url}"
-            puts ""
+        job_list.each do |jobs_headline|
             #binding.pry
+            puts "#{jobs_headline}"
+            # puts "#{url}"
+            puts ""
         end        
     end
 end

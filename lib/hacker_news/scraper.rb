@@ -20,9 +20,9 @@ class HackerNews::Scraper
     def self.scrape_jobs
         doc = Nokogiri::HTML(open(BASE_URL_JOBS))
         doc.css('.title a.storylink').each do |job|
-            job = job.text 
-            #url = article_title.attribute('href').value
-            HackerNews::Jobs.new(job)
+            title = job.text 
+            url = job.attribute('href').value
+            HackerNews::Jobs.new(title, url)
             #binding.pry
             #HackerNews::Jobs.new(description)
         end
