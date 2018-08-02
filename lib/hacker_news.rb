@@ -1,7 +1,7 @@
 #Environment File
 
 module HackerNews
-  # Your code goes here...
+
 end
 
 require 'nokogiri'
