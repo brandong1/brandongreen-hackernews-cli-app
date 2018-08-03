@@ -52,4 +52,5 @@ class HackerNews::CLI
         end
         
         puts "========================================".colorize(:red)
-        
+    end
+end
