@@ -30,12 +30,12 @@ class HackerNews::CLI
             when "news"
                 puts "========================================".colorize(:red)
                 puts "This shows a list of news headlines: "
-                HackerNews::Article.list_news 
+                HackerNews::Helpers.list_data(HackerNews::Article.all) 
                 
             when "jobs"
                 puts "========================================".colorize(:red)
                 puts "Here is a list of available jobs: "
-                HackerNews::Jobs.list_jobs
+                HackerNews::Helpers.list_data(HackerNews::Jobs.all)
             when "exit"
                 puts puts "========================================".colorize(:red)
                 puts "Have a great day!"

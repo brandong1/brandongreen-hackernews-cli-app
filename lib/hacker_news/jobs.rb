@@ -1,11 +1,11 @@
 class HackerNews::Jobs
 
-    attr_accessor :job_headline, :url
+    attr_accessor :title, :url
 
     @@all = []
 
-    def initialize(job_headline, url)
-        @job_headline = job_headline
+    def initialize(title, url)
+        @title = title
         @url = url 
         @@all << self
     end
@@ -14,15 +14,17 @@ class HackerNews::Jobs
         @@all
     end
 
-    def self.list_jobs
-        job_list =[]
-        self.all.each do |jobs|
-            job_list << jobs.job_headline
-            job_list << jobs.url
-        end
-        job_list.each do |jobs_headline|
-            puts "#{jobs_headline}"
-            puts ""
-        end        
-    end
+    # def self.list_data(data)
+    #     data_list =[]
+    #     data.each do |item|
+    #         data_list << item[0] #jobs.job_headline
+    #         data_list << item[1] #url
+    #     end
+    #     data_list.each do |headline|
+    #         puts "#{headline}"
+    #         puts ""
+    #     end        
+    # end
+
+    
 end

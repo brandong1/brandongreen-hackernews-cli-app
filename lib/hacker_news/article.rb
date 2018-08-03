@@ -8,7 +8,7 @@ class HackerNews::Article
         @type = type 
         @title = title
         @url = url 
-        @description = description #Listing description as a possible add-on for displaying the first paragraph of the article. This will be tough because each article links to a different site.
+        @description = description 
         @@all << self
     end
 
@@ -23,7 +23,6 @@ class HackerNews::Article
             list << news.url
         end
         list.each do |news_headline|
-            
             puts "#{news_headline}" 
             puts ""
         end       
