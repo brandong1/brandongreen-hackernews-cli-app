@@ -2,7 +2,7 @@
 
 Welcome to the unofficial Hacker News CLI gem!
 
-This CLI app scrapes the Hacker News website: https://news.ycombinator.com/
+This CLI Gem scrapes the Hacker News website: https://news.ycombinator.com/
 
 Users have the option of viewing the latest news headlines or seeing the job postings listed on the Hacker News website.
 
