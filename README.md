@@ -8,19 +8,7 @@ Users have the option of viewing the latest news headlines or seeing the job pos
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'hacker_news'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hacker_news
+Gem is not published to RubyGems, yet.
 
 ## Usage
 
