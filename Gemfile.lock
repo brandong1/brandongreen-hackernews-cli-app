@@ -22,7 +22,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   hacker_news!
-  nokogiri (~> 1.8, >= 1.8.1)
+  nokogiri (~> 1.8.5)
   pry (~> 0)
   rake (~> 10.0)
 
